@@ -9,3 +9,10 @@ export function calculateGardenExpansion(initialPlants, weeks) {
         cumulativeArea += areaRequired;
 
         currentPlants *= 2;
+    }
+
+    const expandedRadius = Math.sqrt(cumulativeArea / PI);
+    const additionalSpace = (100 * minimumspaceperplant) - cumulativeArea;
+
+    return { cumulativeArea, expandedRadius, additionalSpace };
+}
